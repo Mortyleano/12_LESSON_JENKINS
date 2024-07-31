@@ -16,7 +16,7 @@ public class TestBase {
 
     @BeforeEach
     public void settingsTest() {
-        Configuration.baseUrl = System.getProperty("BASE_URL");
+        Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = System.getProperty("BROWSER");
         Configuration.browserVersion = System.getProperty("BROWSER_VERSION");
         Configuration.browserSize = System.getProperty("WINDOW_SIZE");
