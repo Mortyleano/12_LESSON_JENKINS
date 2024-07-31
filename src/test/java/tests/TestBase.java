@@ -17,10 +17,9 @@ public class TestBase {
     @BeforeEach
     public void settingsTest() {
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browser = System.getProperty("BROWSER");
-        Configuration.browserVersion = System.getProperty("BROWSER_VERSION");
-        Configuration.browserSize = System.getProperty("WINDOW_SIZE");
-        Configuration.remote = System.getProperty("REMOTE_URL");
+        Configuration.browser = System.getProperty("browser");
+        Configuration.browserVersion = System.getProperty("browserVersion");
+        Configuration.browserSize = System.getProperty("windowSize");
         Configuration.pageLoadStrategy = "eager";
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
