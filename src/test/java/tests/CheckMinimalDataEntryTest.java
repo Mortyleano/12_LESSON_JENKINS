@@ -15,8 +15,7 @@ import static io.qameta.allure.Allure.step;
 public class CheckMinimalDataEntryTest extends TestBase {
 
     @Test
-    @Tag("smoke")
-    @Tag("registration")
+    @Tag("smoke") @Tag("registration")
     @Disabled("Тест добавлен для пропуска в Allure отчете")
     @DisplayName("Тест проверяет минимальный ввод данных в форме регистрации")
     void checkingMinimalDataEntryTest() {
