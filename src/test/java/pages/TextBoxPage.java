@@ -25,6 +25,7 @@ public class TextBoxPage {
     public TextBoxPage openTextBoxPage() {
         open("/text-box");
         titlePage.shouldHave(text("Text Box"));
+        sleep(3000);
         return this;
     }
 
@@ -32,6 +33,7 @@ public class TextBoxPage {
     public TextBoxPage removeBanner() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+        executeJavaScript("document.querySelector('[id*=\"Ad.Plus-\"]').remove()");
         return this;
     }
 
