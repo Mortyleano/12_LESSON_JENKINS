@@ -31,7 +31,7 @@ public class RegistrationPage {
     public RegistrationPage openRegistrationPage() {
         open("/automation-practice-form");
         practiceFormWrapper.shouldHave(text("Student Registration Form"));
-        sleep(500);
+        sleep(1000);
         return this;
     }
 

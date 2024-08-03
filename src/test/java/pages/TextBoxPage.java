@@ -25,7 +25,7 @@ public class TextBoxPage {
     public TextBoxPage openTextBoxPage() {
         open("/text-box");
         titlePage.shouldHave(text("Text Box"));
-        sleep(500);
+        sleep(1000);
         return this;
     }
 
