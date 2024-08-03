@@ -38,7 +38,7 @@ public class RegistrationPage {
     public RegistrationPage removeBanner() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
-        executeJavaScript("document.querySelector('[id*=\"Ad.Plus-\"]').remove()");
+        executeJavaScript("$('#Ad.Plus-')");
         return this;
     }
 
