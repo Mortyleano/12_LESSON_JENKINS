@@ -36,9 +36,16 @@ public class RegistrationPage {
 
     @Step("Удаляем все рекламные баннера на странице регистрации студента")
     public RegistrationPage removeBanner() {
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("document.querySelector('[id*=\"Ad.Plus-\"]').remove()");
+        executeJavaScript(
+                "document.querySelectorAll('[id*=\"Ad.Plus-\"], [class*=\"ad\"], " +
+                        "[id*=\"google_ads_iframe\"], [data-google-query-id], ins.adsbygoogle').forEach(el => el.remove());" +
+                        "document.querySelectorAll('iframe').forEach(iframe => {" +
+                        "const src = iframe.getAttribute('src');" +
+                        "if (src && src.includes('googlesyndication.com')) {" +
+                        "iframe.remove();" +
+                        "}" +
+                        "});"
+        );
         return this;
     }
 
