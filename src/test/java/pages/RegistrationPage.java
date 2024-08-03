@@ -40,6 +40,7 @@ public class RegistrationPage {
                 "document.querySelectorAll('#fixedban, #Ad.Plus-, [class*=\"banner\"], " +
                         "[id*=\"banner\"], [id*=\"ad\"], footer').forEach(el => el.remove());"
         );
+
         return this;
     }
 
