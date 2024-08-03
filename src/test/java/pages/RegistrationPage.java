@@ -30,14 +30,12 @@ public class RegistrationPage {
     @Step("Открываем страницу регистрации студента")
     public RegistrationPage openRegistrationPage() {
         open("/automation-practice-form");
-        stateInput.scrollTo();
         practiceFormWrapper.shouldHave(text("Student Registration Form"));
         return this;
     }
 
     @Step("Удаляем все рекламные баннера на странице регистрации студента")
     public RegistrationPage removeBanner() {
-        executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("document.querySelectorAll('#fixedban').forEach(el => el.remove());");
         executeJavaScript("$('footer').remove()");
         return this;
