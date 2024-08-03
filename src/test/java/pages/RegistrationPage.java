@@ -4,7 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import pages.components.CalendarWidget;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -29,6 +30,7 @@ public class RegistrationPage {
     @Step("Открываем страницу регистрации студента")
     public RegistrationPage openRegistrationPage() {
         open("/automation-practice-form");
+        stateInput.scrollTo();
         practiceFormWrapper.shouldHave(text("Student Registration Form"));
         return this;
     }
