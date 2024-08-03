@@ -37,8 +37,8 @@ public class RegistrationPage {
     @Step("Удаляем все рекламные баннера на странице регистрации студента")
     public RegistrationPage removeBanner() {
         executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("document.querySelectorAll('[id*=Ad.Plus-]').forEach(el => el.remove());");
         executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#Ad.Plus-')");
         return this;
     }
 
