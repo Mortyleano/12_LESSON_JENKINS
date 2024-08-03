@@ -31,15 +31,15 @@ public class RegistrationPage {
     public RegistrationPage openRegistrationPage() {
         open("/automation-practice-form");
         practiceFormWrapper.shouldHave(text("Student Registration Form"));
+        sleep(3000);
         return this;
     }
 
     @Step("Удаляем все рекламные баннера на странице регистрации студента")
     public RegistrationPage removeBanner() {
-        executeJavaScript(
-                "document.querySelectorAll('#fixedban, #Ad.Plus-, [class*=\"banner\"], " +
-                        "[id*=\"banner\"], [id*=\"ad\"], footer').forEach(el => el.remove());"
-        );
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("document.querySelector('[id*=\"Ad.Plus-\"]').remove()");
         return this;
     }
 
